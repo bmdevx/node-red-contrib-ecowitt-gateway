@@ -3,7 +3,7 @@
         category: 'config',
         defaults: {
             name: { value: '', required: false },
-            gateway: { value: true, required: true },
+            gateway: { value: '', required: true },
             port: { value: 45000, required: true, validate: RED.validators.number() }
         },
         label: () => {
