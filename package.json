@@ -1,0 +1,43 @@
+{
+  "name": "node-red-contrib-ecowitt-gateway",
+  "version": "1.0.0",
+  "description": "Ecowitt Gateway for NodeRED",
+  "scripts": {
+    "test": "mocha \"test/**/*_spec.js\""
+  },
+  "node-red": {
+    "version": ">=3.0.0",
+    "nodes": {
+      "config-node": "nodes/config-node.js",
+      "button-node": "nodes/livedata-node.js"
+    }
+  },
+  "author": "bmdevx",
+  "license": "Apache-2.0",
+  "keywords": [
+    "node-red",
+    "ecowitt",
+    "GW1000",
+    "GW1100",
+    "GW2000",
+    "weather",
+    "api"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bmdevx/node-red-contrib-ecowitt-gateway.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bmdevx/node-red-contrib-ecowitt-gateway/issues"
+  },
+  "homepage": "https://github.com/bmdevx/node-red-contrib-ecowitt-gateway#readme",
+  "devDependencies": {
+    "eslint": "^8.50.0",
+    "node-red": "^3.1.0",
+    "node-red-node-test-helper": "^0.3.2",
+    "should": "^13.2.3"
+  },
+  "dependencies": {
+    "ecowitt-gateway": "^1.0.0"
+  }
+}

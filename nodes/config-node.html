@@ -1,0 +1,45 @@
+<script type="text/javascript">
+    RED.nodes.registerType('config-node', {
+        category: 'config',
+        defaults: {
+            name: { value: '', required: false },
+            gateway: { value: true, required: true },
+            port: { value: 45000, required: true, validate: RED.validators.number() }
+        },
+        label: () => {
+            return this.name || 'Ecotwitt Gateway Config'
+        },
+        color: "#109CFF",
+        paletteLabel: "Ecotwitt Gateway Config",
+        icon: "font-awesome/fa-list"
+    });
+</script>
+
+<script type="text/html" data-template-name="config-node">
+    <div class="form-row" style="display: -webkit-flex;">
+        <label for="node-config-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-config-input-name">
+    </div>
+    <div class="form-row" style="display: -webkit-flex;">
+        <label for="node-config-input-gateway"><i class="fa fa-tag"></i> Gateway (Host/IP)</label>
+        <input type="text" id="node-config-input-gateway">
+    </div>
+    <div class="form-row" style="display: -webkit-flex;">
+        <label for="node-config-input-port"><i class="fa fa-tag"></i> Port</label>
+        <input type="number" id="node-config-input-port">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="config-node">
+    <p>Ecotwitt Gateway Configuration</p>
+    <h3>Settings</h3>
+    <dl class="message-properties">
+        <dt>Gateway <span class="property-type">string</span></dt>
+        <dd>Host address or IP for the gateway.</dd>
+
+        <dt>Port <span class="property-type">number</span></dt>
+        <dd>Port to connect to. Default is 45000</dd>
+    </dl>
+    <h3>Details</h3>
+    <p>This node sets up the NodeRED configuration for the Ecotwitt Gateway.</p>
+</script>

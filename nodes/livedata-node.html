@@ -1,0 +1,61 @@
+<script type="text/javascript">
+    RED.nodes.registerType('livedata-node', {
+        category: 'ecowitt',
+        defaults: {
+            name: { value: '', required: false },
+            config: { type: 'config-node', required: true },
+            include_rain: { value: true, required: true },
+            filter_active_sensors: { value: false, required: true }
+        },
+
+        inputs: 1,
+        outputs: 0,
+        label: function () {
+            return this.name || 'Live Weather Data'
+        },
+        color: "#109CFF",
+        paletteLabel: "Live Weather Data",
+        icon: "font-awesome/fa-sun-o"
+    });
+</script>
+
+<script type="text/html" data-template-name="livedata-node">
+    <div class="form-row" style="display: -webkit-flex;">
+        <label for="node-input-name" style="width: 10em"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Live Weather Data">
+    </div>
+
+    <div class="form-row" style="display: -webkit-flex;">
+        <label for="node-input-config" style="width: 10em"><i class="fa fa-cog"></i> Config</label>
+        <input type="text" id="node-input-config">
+    </div>
+
+    <div class="form-row">
+        <input type="checkbox" id="node-config-input-include_rain" style="display: inline-block; width: auto; vertical-align: top;">
+        <label for="node-config-input-include_rain" style="width: 70%;"> Include Rain Data</label>
+    </div>
+
+    <div class="form-row">
+        <input type="checkbox" id="node-config-input-filter_active_sensors" style="display: inline-block; width: auto; vertical-align: top;">
+        <label for="node-config-input-filter_active_sensors" style="width: 70%;"> Filter Active Sensors</label>
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="livedata-node">
+    <p>Live Weather Data</p>
+    <h3>Settings</h3>
+    <dl class="message-properties">
+        <dt>Include Rain Data <span class="property-type">string</span></dt>
+        <dd>Will include rain data including event, hourly and piezo.</dd>
+
+        <dt>Filter Active Sensors <span class="property-type">bool</span></dt>
+        <dd>Will filter sensors to only include active ones if inactive ones are being transmitted.</dd>
+    </dl>
+    <h3>Input</h3>
+    <dl class="message-properties">
+        <dt>msg <span class="property-type">object</span></dt>
+        <dd>Accepts anything.</dd>
+    </dl>
+    <h3>Details</h3>
+    <p>This will get live weather data from the Ecowitt Gateway</p>
+</script>

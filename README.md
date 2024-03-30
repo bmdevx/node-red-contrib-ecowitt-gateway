@@ -1,0 +1,3 @@
+# NodeRED ECOWITT Gateway (node-red-contrib-ecowitt-gateway)
+
+[![GitHub last commit](https://img.shields.io/github/last-commit/bmdevx/node-red-contrib-ecowitt-gateway?style=flat-square)](https://github.com/bmdevx/node-red-contrib-ecowitt-gateway) [![npm](https://img.shields.io/npm/dt/node-red-contrib-ecowitt-gateway?style=flat-square)](https://www.npmjs.com/package/node-red-contrib-ecowitt-gateway) [![npm](https://img.shields.io/npm/v/node-red-contrib-ecowitt-gateway?style=flat-square)](https://www.npmjs.com/package/node-red-contrib-ecowitt-gateway) [![GitHub](https://img.shields.io/github/license/bmdevx/node-red-contrib-ecowitt-gateway?style=flat-square)](https://github.com/bmdevx/node-red-contrib-ecowitt-gateway/blob/main/LICENSE)
