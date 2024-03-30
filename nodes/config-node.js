@@ -5,7 +5,7 @@ module.exports = function (RED) {
         RED.nodes.createNode(this, config);
 
         const node = this;
-        
+
         node.gateway = new EWGateway(config.gateway, config.port);
 
         node.gateway.getMacAddr()
@@ -18,5 +18,5 @@ module.exports = function (RED) {
         });
     }
 
-    RED.nodes.registerType("config-node", ConfigNode);
+    RED.nodes.registerType("ew-config-node", ConfigNode);
 }
