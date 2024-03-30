@@ -1,6 +1,6 @@
 {
   "name": "node-red-contrib-ecowitt-gateway",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Ecowitt Gateway for NodeRED",
   "scripts": {
     "test": "mocha \"test/**/*_spec.js\""
@@ -23,6 +23,9 @@
     "weather",
     "api"
   ],
+  "engines": {
+    "node": ">=12.0.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bmdevx/node-red-contrib-ecowitt-gateway.git"
