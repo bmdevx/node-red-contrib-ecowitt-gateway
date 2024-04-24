@@ -6,7 +6,7 @@ module.exports = function (RED) {
 
         const node = this;
 
-        node.gateway = new EWGateway(config.gateway, config.port);
+        node.gateway = new EWGateway(config.gateway, config.port, config.debug);
 
         node.gateway.getMacAddr()
             .catch(err => {

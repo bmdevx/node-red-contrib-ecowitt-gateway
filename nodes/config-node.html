@@ -4,7 +4,8 @@
         defaults: {
             name: { value: '', required: false },
             gateway: { value: '', required: true },
-            port: { value: 45000, required: true, validate: RED.validators.number() }
+            port: { value: 45000, required: true, validate: RED.validators.number() },
+            debug: { value: false, required: true }
         },
         label: () => {
             return this.name || 'Ecowitt Gateway Config'
@@ -28,6 +29,10 @@
         <label for="node-config-input-port"><i class="fa fa-tag"></i> Port</label>
         <input type="number" id="node-config-input-port">
     </div>
+    <div class="form-row">
+        <input type="checkbox" id="node-config-input-debug" style="display: inline-block; width: auto; vertical-align: top;">
+        <label for="node-config-input-debug" style="width: 70%;"> Debug</label>
+    </div>
 </script>
 
 <script type="text/x-red" data-help-name="ew-config-node">
@@ -39,6 +44,9 @@
 
         <dt>Port <span class="property-type">number</span></dt>
         <dd>Port to connect to. Default is 45000</dd>
+
+        <dt>Debug <span class="property-type">bool</span></dt>
+        <dd>Logs debug data to the NodeRED instance</dd>
     </dl>
     <h3>Details</h3>
     <p>This node sets up the NodeRED configuration for the Ecowitt Gateway.</p>
