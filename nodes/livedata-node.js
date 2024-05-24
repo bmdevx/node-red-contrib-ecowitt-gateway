@@ -15,20 +15,12 @@ module.exports = function (RED) {
         const filterActiveSensors = config.filter_active_sensors || false;
 
         node.on('input', (msg, send, done) => {
-            if (gateway) {
-                gateway.getLiveData(includeRain, filterActiveSensors)
-                    .then(data => {
-                        send({ payload: data });
-                    })
-                    .catch(err => {
-                        node.warn(err);
-                    })
-                    .finally(_ => {
-                        done();
-                    });
-            } else {
-                done();
-            }
+            gateway.getLiveData(includeRain, filterActiveSensors)
+                .then(data => {
+                    send({ payload: data });
+                })
+                .catch(node.warn)
+                .finally(done);
         });
 
         node.on('close', (done) => {
