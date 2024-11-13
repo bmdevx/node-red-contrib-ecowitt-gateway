@@ -6,7 +6,7 @@ module.exports = function (RED) {
 
         const node = this;
 
-        const configRainMethod = config.rainMethod.toLowerCase();
+        const configRainMethod = config.rainMethod == null ? 'auto' : config.rainMethod.toLowerCase();
         const rainMethod = configRainMethod == 'true' ? true : (configRainMethod == 'false' ? false : null);
 
         node.gateway = new EWGateway(config.gateway, config.port, rainMethod, config.debug);
