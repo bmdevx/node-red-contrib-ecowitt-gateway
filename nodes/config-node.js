@@ -6,9 +6,18 @@ module.exports = function (RED) {
 
         const node = this;
 
-        node.gateway = new EWGateway(config.gateway, config.port, config.debug);
+        const configRainMethod = config.rainMethod.toLowerCase();
+        const rainMethod = configRainMethod == 'true' ? true : (configRainMethod == 'false' ? false : null);
+
+        node.gateway = new EWGateway(config.gateway, config.port, rainMethod, config.debug);
 
         node.gateway.getMacAddr()
+            .then(_ => {
+                if (config.debug)
+                {
+                    node.log(`Using get rain method: ${node.gateway.useReadRainData ? 'ReadRainData' : 'ReadRain'}`);
+                }
+            })
             .catch(err => {
                 node.warn(`Gateway ${config.gateway}:${config.port} not found.`);
             });
